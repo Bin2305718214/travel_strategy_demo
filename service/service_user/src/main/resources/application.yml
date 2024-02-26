@@ -57,9 +57,5 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:com/travel/mapper/xml/*.xml
 
-ribbon:
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
-
 travel-strategy:
   path: /opt/travel-strategy/upload
