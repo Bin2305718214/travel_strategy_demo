@@ -58,4 +58,4 @@ mybatis-plus:
   mapper-locations: classpath:com/travel/mapper/xml/*.xml
 
 travel-strategy:
-  path: /opt/travel-strategy/upload
+  path: D:\upload\travel-strategy
