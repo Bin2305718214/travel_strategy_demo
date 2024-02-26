@@ -1,0 +1,65 @@
+# \u670D\u52A1\u7AEF\u53E3
+server:
+  port: 8003
+
+spring:
+  application:
+    # \u670D\u52A1\u540D
+    name: service-user
+  # \u73AF\u5883\u8BBE\u7F6E\uFF1Adev\u3001test\u3001prod
+  profiles:
+    active: dev
+    include: email
+  # mysql\u6570\u636E\u5E93\u8FDE\u63A5
+  servlet:
+    multipart:
+      max-file-size: 10MB  # 单个文件的大小
+      max-request-size: 100MB  # 上传文件的总大小
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/travel_strategy?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: m252124914l@
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        # \u6700\u5927\u963B\u585E\u7B49\u5F85\u65F6\u95F4(\u8D1F\u6570\u8868\u793A\u6CA1\u9650\u5236)
+        max-idle: 5
+        min-idle: 0
+  main:
+    allow-bean-definition-overriding: true
+  #\u8FD4\u56DEjson\u7684\u5168\u5C40\u65F6\u95F4\u683C\u5F0F
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+    nacos:
+      discovery:
+        # nacos\u670D\u52A1\u5730\u5740
+        server-addr: localhost:8848
+#  rabbitmq:
+#    #rabbitmq\u5730\u5740
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+
+#\u914D\u7F6Emapper xml\u6587\u4EF6\u7684\u8DEF\u5F84
+mybatis-plus:
+  mapper-locations: classpath:com/travel/mapper/xml/*.xml
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+travel-strategy:
+  path: /opt/travel-strategy/upload
