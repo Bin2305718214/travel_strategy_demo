@@ -137,12 +137,20 @@ travel_strategy
 
 1. 默认端口启动nacos、redis、mysql。找到 `travel_strategy.sql` 文件，在mysql数据库中建立 `travel_strategy` 仓库并执行完成数据初始化操作。
 
-2. 使用IDEA打开后端源代码，maven会根据 `pom.xml` 文件自动导入需要的依赖。根据`service`中`service-user`下 `application.yml` 的图片的存储路径 `travel-strategy.path` ，找到 `img.rar` 压缩包的文件并在本地对应的路径下创建文件夹解压到该路径下。
+2. 使用IDEA打开后端源代码，maven会根据 `pom.xml` 文件自动导入需要的依赖。根据`service`中`service-user`下 `application.yml` 的图片的存储路径 `travel-strategy.path` ，图片即存储在该路径下。
 
    ```
    travel-strategy:
      path: D:\upload\travel-strategy\
    ```
+
+并修改用户注册时发送邮件的邮箱。
+
+   ```
+    username: 
+    password: 
+   ```
+其中 `username` 为邮箱， `password` 为邮箱授权码
 
 3. 修改各个微服务中的application.yml文件中的nacos的访问地址`spring.cloud.nacos.discovery.server-addr` 和redis的访问地址`spring.redis.host` 和端口号`spring.redis.port` 。
 
@@ -151,9 +159,9 @@ travel_strategy
      cloud:
        nacos:
          discovery:
-           server-addr: 110.41.136.209:8848
+           server-addr: localhost:8848
      redis:
-       host: 110.41.136.209
+       host: localhost
        port: 6379
    ```
 
@@ -163,9 +171,9 @@ travel_strategy
    spring:
      datasource:
        driver-class-name: com.mysql.jdbc.Driver
-       url: jdbc:mysql://110.41.136.209:3306/travel_strategy?characterEncoding=utf-8&useSSL=false
+       url: jdbc:mysql://localhost:3306/travel_strategy?characterEncoding=utf-8&useSSL=false
        username: root
-       password: 12345
+       password: 123456
    ```
 
 5. 在IDEA输出栏的`services`选项中启动 `ServiceCityApplication(后台API接口服务)`、`ServiceUserApplication(前台API接口服务)`、`ServiceGatewayApplication(网关服务)`、`ServiceDictApplication(数据字典服务)`四个微服务。
