@@ -4,6 +4,11 @@
 
 项目命名为travel_strategy，本项目是希望细化旅游平台的功能，将旅游攻略拆分出来形成一个单独的系统。项目为“天南地北”旅游攻略系统，是基于Spring Cloud Alibaba + vue的在线旅游攻略查询平台，集成树洞发布、攻略浏览、游记发布和后台管理等功能。
 
+## 前端页面
+URL:
+[Bin2305718214/travel_strategy_pages ](https://github.com/Bin2305718214/travel_strategy_pages/tree/master)
+
+
 
 
 ## 技术选型
