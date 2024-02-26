@@ -216,4 +216,23 @@ spring:
         uri: lb://service-user
         predicates: Path=/images/**
 ```
+## 页面展示
 
+### 前台
+
+#### 首页
+
+![image](https://github.com/Bin2305718214/travel_strategy_demo/assets/66017535/4e76ff6b-08c8-4706-a784-ce3a2e0cac40)
+
+
+#### 攻略
+
+![image](https://github.com/Bin2305718214/travel_strategy_demo/assets/66017535/8c3c8c50-f5a0-4079-a50a-a76e7b34a17a)
+
+#### 讨论
+
+![image](https://github.com/Bin2305718214/travel_strategy_demo/assets/66017535/aeda9a8a-247d-4dbf-b4d2-1aef7e80bf0f)
+
+### 后台
+
+![image](https://github.com/Bin2305718214/travel_strategy_demo/assets/66017535/6999b356-96aa-44fc-bb71-ba2cbdc50f3f)
